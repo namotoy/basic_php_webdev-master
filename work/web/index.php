@@ -1,7 +1,10 @@
 
 <?php
 
+require('../app/functions.php');
 $today = date('Y-m-d H:i:s:l');
+
+$name = 'Yusuke <script>alert(1);</script>';
 
 ?>
 <!DOCTYPE html>
@@ -11,9 +14,9 @@ $today = date('Y-m-d H:i:s:l');
   <title>PHP Practice</title>
 </head>
 <body>
-  <p>Hello, PHP!</p>
-  <p>Today: <?php echo date('Y-m-d H:i:s:l'); ?>
-  </p>
+  <p>Hello, <?= h($name);?>!</p>
+  <!-- <p>Today: <?php echo date('Y-m-d H:i:s:l'); ?>
+  </p> -->
   <p>Today: <?= $today; ?></p>
 </body>
 </html>
