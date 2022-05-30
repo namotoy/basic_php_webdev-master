@@ -1,3 +1,9 @@
+
+<?php
+
+$today = date('Y-m-d H:i:s:l');
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,5 +12,8 @@
 </head>
 <body>
   <p>Hello, PHP!</p>
+  <p>Today: <?php echo date('Y-m-d H:i:s:l'); ?>
+  </p>
+  <p>Today: <?= $today; ?></p>
 </body>
 </html>
