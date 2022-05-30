@@ -4,7 +4,9 @@
 require('../app/functions.php');
 $today = date('Y-m-d H:i:s:l');
 
-$name = 'Yusuke <script>alert(1);</script>';
+$names =[
+  'Yusuke','Taro','Hanako',
+];
 
 ?>
 <!DOCTYPE html>
@@ -14,6 +16,17 @@ $name = 'Yusuke <script>alert(1);</script>';
   <title>PHP Practice</title>
 </head>
 <body>
+  <ul>
+    <?php if (empty($names)):?>
+      <li>Nobody!</li>
+      <?php else: ?>
+        <?php foreach ($names as $name):?>
+          <li><?= h($name); ?>
+          </li>
+        <?php endforeach; ?>
+      <?php endif; ?>
+
+  </ul>
   <p>Hello, <?= h($name);?>!</p>
   <!-- <p>Today: <?php echo date('Y-m-d H:i:s:l'); ?>
   </p> -->
