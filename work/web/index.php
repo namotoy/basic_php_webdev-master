@@ -13,6 +13,12 @@ $names =[
 <form action="result.php" method="get">
   <input type="text" name = "message">
   <input type="text" name = "username">
+  <textarea name ="message"></textarea>
+  <select  name = "colors[]" multiple>
+    <option value ="orange">Orange</option>
+    <option value ="pink">Pink</option>
+    <option value ="blue">Blue</option>
+  </select>
   <button>Send</button>
 </form>
 
