@@ -45,8 +45,8 @@ $names =[
   <label><input type="radio" name ="color" value="pink">Pink</label>
   <label><input type="radio" name ="color" value="blue">Blue</label>
 
-
   <button>Send</button>
+  <a href="reset.php">[reset]</a>
 </form>
 
 
