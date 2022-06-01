@@ -27,26 +27,26 @@ $names =[
     <p>Today: <?= $today; ?></p>
 
 <form action="result.php" method="get">
-  <input type="text" name = "message">
+  <!-- <input type="text" name = "message">
   <input type="text" name = "username">
-  <textarea name ="message"></textarea>
+  <textarea name ="message"></textarea> -->
 
-  <select  name = "colors[]" multiple>
+  <!-- <select  name = "colors[]" multiple>
     <option value ="orange">Orange</option>
     <option value ="pink">Pink</option>
     <option value ="blue">Blue</option>
-  </select>
+  </select> -->
  
-  <label><input type="checkbox" name ="colors[]" value="orange">Orange</label>
+  <!-- <label><input type="checkbox" name ="colors[]" value="orange">Orange</label>
   <label><input type="checkbox" name ="colors[]" value="pink">Pink</label>
-  <label><input type="checkbox" name ="colors[]" value="blue">Blue</label>
+  <label><input type="checkbox" name ="colors[]" value="blue">Blue</label> -->
 
-  <label><input type="radio" name ="color" value="orange">Orange</label>
+  <!-- <label><input type="radio" name ="color" value="orange">Orange</label>
   <label><input type="radio" name ="color" value="pink">Pink</label>
-  <label><input type="radio" name ="color" value="blue">Blue</label>
+  <label><input type="radio" name ="color" value="blue">Blue</label> -->
 
   <button>Send</button>
-  <a href="reset.php">[reset]</a>
+  <!-- <a href="reset.php">[reset]</a> -->
 </form>
 
 
