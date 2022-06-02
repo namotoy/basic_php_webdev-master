@@ -2,6 +2,17 @@
 
 require('../app/functions.php');
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+  $message = trim(filter_input(INPUT_POST, 'message'));
+  $message = $message !== '' ? $message : '...';
+  
+  $filename = '../app/messages.txt';
+  $fp = fopen($filename, 'a');
+  fwrite($fp, $message . "\n");
+  fclose($fp);
+}else{
+  exit('Invalid Request');
+}
 // $message = trim(filter_input(INPUT_GET, 'message'));
 // $message = $message !== '' ? $message : '...';
 // $username = filter_input(INPUT_GET, 'username');
@@ -13,8 +24,7 @@ require('../app/functions.php');
 // $color = $color ?? 'None selected';  //上記と同じ意味
 // $colorFromGet = filter_input(INPUT_GET, 'color') ?? 'transparent';
 // setcookie('color', $colorFromGet);
-
-$_SESSION['color'] = $colorFromGet;
+// $_SESSION['color'] = $colorFromGet;
 
 include('../app/_parts/_header.php');
 ?>
@@ -22,6 +32,7 @@ include('../app/_parts/_header.php');
 <!-- <p><?= h($colors); ?></p>
 <p><?= h($colorFromGet); ?></p>
 <p><?= nl2br(h($message)); ?> by <?= h($username); ?></p> -->
+<p>Message added!</p>
 <p><a href="index.php">Go back</a></p>
 
 <?php
