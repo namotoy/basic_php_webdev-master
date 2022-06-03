@@ -3,9 +3,12 @@
 
 require('../app/functions.php');
 
+createToken();
+
 define('FILENAME','../app/messages.txt'); 
 // $color = filter_input(INPUT_COOKIE, 'color') ??'transparent';
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+  validateToken();
   $message = trim(filter_input(INPUT_POST, 'message'));
   $message = $message !== '' ? $message : '...';
   
@@ -71,6 +74,7 @@ include('../app/_parts/_header.php');
   <label><input type="radio" name ="color" value="blue">Blue</label> -->
 
   <button>Post</button>
+  <input type="hidden" name="token" value="<?= h($_SESSION['token']);?>">
   <!-- <a href="reset.php">[reset]</a> -->
 </form>
 
