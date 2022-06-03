@@ -3,10 +3,24 @@
 
 require('../app/functions.php');
 
+define('FILENAME','../app/messages.txt'); 
 // $color = filter_input(INPUT_COOKIE, 'color') ??'transparent';
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+  $message = trim(filter_input(INPUT_POST, 'message'));
+  $message = $message !== '' ? $message : '...';
+  
+  $fp = fopen(FILENAME, 'a');
+  fwrite($fp, $message . "\n");
+  fclose($fp);
 
-$filename = '../app/messages.txt';
-$messages = file($filename, FILE_IGNORE_NEW_LINES);
+  header('Location: http://localhost:8080/result.php'); 
+  exit; 
+}
+// else{
+//   exit('Invalid Request');
+// }
+
+$messages = file(FILENAME, FILE_IGNORE_NEW_LINES);
 
 include('../app/_parts/_header.php');
 
@@ -35,7 +49,7 @@ include('../app/_parts/_header.php');
     <p>Hello, <?= h($name); ?>!</p>
     <p>Today: <?= $today; ?></p> -->
 
-<form action="result.php" method="post">
+<form action="" method="post">
   <input type="text" name="message">
 <!-- <form action="result.php" method="get"> -->
   <!-- <input type="text" name = "message">
